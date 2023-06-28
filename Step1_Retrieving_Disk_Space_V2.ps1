@@ -24,8 +24,9 @@ Write-Host "Please wait..."
 Get-Volume -DriveLetter C
 $Before = Get-Volume -DriveLetter C
 
-# Delete RecycleBin content for all users on C:\.
+# Delete RecycleBin content for all users on C:\ and D:\.
 Clear-RecycleBin -DriveLetter C -Force -ErrorAction SilentlyContinue
+Clear-RecycleBin -DriveLetter D -Force -ErrorAction SilentlyContinue
 
 # Delete each profiles's temp files.
 $users = Get-ChildItem $env:HOMEDRIVE\Users
